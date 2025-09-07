@@ -1,7 +1,7 @@
-
+import string
 
 paragraph = open("words.txt")
-words = paragraph.read()
+words = paragraph.read().lower().translate(str.maketrans('', '', string.punctuation))
 amountOfWords = len(words.split())
 word = words.split()
 
@@ -15,5 +15,11 @@ for i in word:
     else:
         dict.update({i:1})
 
-print(dict)
+default = 0
+most = ""
+for i in dict.keys():
+    if dict[i] >= default:
+        most = i
+        default = dict[i]
+print(most,default)
 print(amountOfWords)
