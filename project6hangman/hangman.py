@@ -4,7 +4,6 @@ def getword():
     file = open("word.txt")
     #each line into a list
     words = file.readlines()
-
     #need to remove newline
     for i in range(len(words)):
         words[i] = words[i].rstrip().lower()
@@ -50,7 +49,6 @@ while True:
         break
     #show lives
     print(f"you have {lives} lives")
-
     #user inputs guess
     guess = input("Guess a letter or word: ")
     if len(guess) == 1:
